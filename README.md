@@ -115,3 +115,12 @@ volunteersPlacement/
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+## User Interface
+### Volunteers Page:
+
+### Edit page:
+![image](https://github.com/nechamale/angular-project/assets/150395714/0ffb8afa-e26d-49bd-8c37-445a9e192fd7)
+
+### Scheduling Page:
+![image](https://github.com/nechamale/angular-project/assets/150395714/662b602d-f87c-4aca-974b-5cb2f8f4a8d4)
+
