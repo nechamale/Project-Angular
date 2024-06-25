@@ -1,0 +1,38 @@
+<h2>Scheduling</h2>
+<form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
+    <div class="card-header">
+        <table class="table">
+            <thead class="table-warning">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Sunday</th>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                    <th scope="col">Wednesday</th>
+                    <th scope="col">Thursday</th>
+                    <th scope="col">Friday</th>
+                    <th scope="col">Shabat</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="flagScheduling">
+                <tr>
+                    <td scope="row" class="border-warning-subtle">embedded</td>
+                    <td *ngFor="let vol of scheduling"> <span *ngIf="vol"> {{vol.first_name}} {{vol.last_name}} </span></td>
+                </tr>
+                <tr formArrayName="days">
+                    <td scope="row" class="border-warning-subtle">available</td>
+                    <td *ngFor="let day of days.controls; index as i">
+                        <select name="day" id="day" [formControlName]="i" *ngIf="byDay(i).length>0"
+                            [ngClass]="{'selected': day.value!=null}"
+                            >
+                            <option [ngValue]="null">no volunteer</option>
+                            <option *ngFor="let li of byDay(i)" [ngValue]="li" >{{li.first_name}} {{li.last_name}}</option>
+                        </select>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table><br>
+        <button type="submit" class="btn btn-outline-warning col-md-4 offset-md-4">Save</button>
+    </div>
+</form>

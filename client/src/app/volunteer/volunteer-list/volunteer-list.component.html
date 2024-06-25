@@ -1,0 +1,25 @@
+<h2>Volunteers</h2>
+<table class="table">
+    <thead class="table-warning">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phon</th>
+            <th scope="col">Days</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vol of listVolunteer; index as i">
+            <th scope="row"> {{vol.id}} </th>
+            <td> {{vol.first_name}} {{vol.last_name}} </td>
+            <td> {{vol.addres}}</td>
+            <td> {{vol.phon}}</td>
+            <td> [<span *ngFor="let day of vol.days; index as i;"><span *ngIf="day"> {{weekDays[i]}}, </span></span>]
+            </td>
+            <td> <button (click)="selectVolunteer(vol.id)" class="btn btn-warning">edit 📝</button></td>
+        </tr>
+
+    </tbody>
+</table>
